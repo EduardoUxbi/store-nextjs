@@ -1,9 +1,11 @@
 import Link from "next/link";
+import Image from 'next/image'
 import styles from "./Header.module.sass";
 
 export const Header = () => {
     return (
         <header className={styles.Header}>
+            <Image src="/img/favicon.png" height={50} width={50} alt="logo"></Image>
             <nav>
                 <ul>
                     <li>
