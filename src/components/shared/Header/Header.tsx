@@ -9,7 +9,7 @@ export const Header = () => {
             <nav>
                 <ul>
                     <li>
-                        <Link href="/"><p>Home</p></Link>
+                        <Link href="/" scroll={false}><p>Home</p></Link>
                     </li>
                     <li>
                         <Link href="/store"><p>Store</p></Link>
