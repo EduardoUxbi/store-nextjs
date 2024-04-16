@@ -1,8 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./Header.module.sass";
+import { cookies } from "next/headers";
+import { validateAccessToken } from "app/utils/auth/validateAccessToken";
 
-export const Header = () => {
+export const Header = async () => {
+  const customer = await validateAccessToken()
+
   return (
     <header className={styles.Header}>
       <Image src="/img/favicon.png" height={50} width={50} alt="logo"></Image>
@@ -14,14 +18,24 @@ export const Header = () => {
             </Link>
           </li>
           <li>
-            <Link href="/store">
-              <p>Store</p>
-            </Link>
+            {customer?.firstName ? (
+              <Link href="/store">
+                <p>Store</p>
+              </Link>
+            ) : (
+              ""
+            )}
           </li>
           <li>
-            <Link href="/test" scroll={false}>
-              <p>Test</p>
-            </Link>
+            {customer?.firstName ? (
+              <Link href="/logout">
+                <p>Logout</p>
+              </Link>
+            ) : (
+              <Link href="/login">
+                <p>Login</p>
+              </Link>
+            )}
           </li>
         </ul>
       </nav>
