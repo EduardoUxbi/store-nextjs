@@ -13,7 +13,7 @@ export default async function Layout({
 }) {
   const collections = await getCollections();
   const products = await getProducts();
-  const productTitles = products.map((product) => product.title);
+  const productTitles = products.map((product: any) => product.title);
   const flatProductTitles = productTitles.join("\n");
   const agent = createAgent(flatProductTitles);
 
