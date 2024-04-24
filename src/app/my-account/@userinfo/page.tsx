@@ -7,10 +7,10 @@ export default async function MyAccountPage() {
 
   return (
     <div>
-      <h2>Account info</h2>
+      <h2>Perfil</h2>
       <section>
         <p>Nombre: {customer?.firstName}</p>
-        <p>email: {customer?.email}</p>
+        <p>Email: {customer?.email}</p>
       </section>
     </div>
   );

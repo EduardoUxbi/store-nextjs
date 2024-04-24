@@ -19,11 +19,11 @@ export default async function MyAccountPage() {
   const ordersInfo = await getCustomerOrders();
   return (
     <div>
-      <h2>Your orders</h2>
+      <h2>Ordenes realizadas</h2>
       <section>
         {ordersInfo.orders?.map((order: OrderType) => (
           <a href={order.statusUrl} key={order.orderNumber} className={styles.OrderInfo}>
-            <h3>Order {order.name}</h3>
+            <h3>Orden {order.name}</h3>
             {
               order.lineItems.edges.map(({ node }) => (
                 <div key={node.title}>
