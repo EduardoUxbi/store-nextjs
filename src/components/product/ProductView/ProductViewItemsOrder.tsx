@@ -54,7 +54,7 @@ export const ProductViewItemsOrder = ({ maxQuantity, product }: ProductViewItems
           type="submit"
         >
           <FaCartShopping />
-          <span>Add to cart</span>
+          <span>Agregar</span>
         </button>
       </form>
     </div>
