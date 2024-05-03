@@ -15,44 +15,44 @@ export const NewAccountForm = () => {
 
   return (
     <div className={styles.NewAccountForm}>
-      <h1 className={styles.NewAccountForm__title}>New Account</h1>
+      <h1 className={styles.NewAccountForm__title}>Nueva Cuenta</h1>
       <form className={styles.NewAccountForm__form} onSubmit={handleSumbmit}>
         <input
           type="text"
           name="firstName"
-          placeholder="Name"
+          placeholder="Nombre(s)"
           disabled={loading}
         />
         <input
           type="text"
           name="lastName"
-          placeholder="Lastname"
+          placeholder="Apellido(s)"
           disabled={loading}
         />
         <input
           type="text"
           name="email"
-          placeholder="email"
+          placeholder="Correo"
           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
           disabled={loading}
         />
         <input
           type="text"
           name="phone"
-          placeholder="phone number"
+          placeholder="No. Telefono"
           pattern="^[0-9]*$"
           disabled={loading}
         />
         <input
           type="password"
           name="password"
-          placeholder="password"
+          placeholder="Contraseña"
           disabled={loading}
         />
         <input
           type="password"
           name="password_confirmation"
-          placeholder="re-type password"
+          placeholder="Repetir Contraseña"
           disabled={loading}
         />
         <input
