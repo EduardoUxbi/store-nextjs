@@ -33,3 +33,11 @@ export const createAccessToken = async (email: string, password: string) => {
     return accessToken;
   }
 };
+
+export const deleteAccessToken = () => {
+  const cookiesStore = cookies();
+
+  cookiesStore.delete("accessToken");
+
+  return true;
+}

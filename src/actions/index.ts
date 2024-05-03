@@ -2,7 +2,7 @@
 import { GraphQLClientSingleton } from "app/graphql"
 import { createCartMutation } from "app/graphql/mutations/createCartMutation"
 import { createUserMutation } from "app/graphql/mutations/createUserMutation"
-import { createAccessToken } from "app/utils/auth/createAccessToken"
+import { createAccessToken, deleteAccessToken } from "app/utils/auth/createAccessToken"
 import { validateAccessToken } from "app/utils/auth/validateAccessToken"
 import { cookies } from "next/headers"
 import { redirect } from "next/navigation"
@@ -38,6 +38,14 @@ export const handleLogin = async (formData: FormData) => {
   const accesToken = await createAccessToken(formDataObject.email as string, formDataObject.password as string)
   if (accesToken) {
     redirect('/store')
+  }
+}
+
+export const handleLogout = () => {
+  const logout = deleteAccessToken();
+
+  if(logout) {
+    redirect('/login');
   }
 }
 

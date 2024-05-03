@@ -8,7 +8,7 @@ type SanitizeHTMLProps = {
 
 export const SanitizeHTML = ({ tag, children, ...rest }: SanitizeHTMLProps) => {
   const sanitizedHTML = sanitize(children, {
-    allowedTags: ["em"],
+    allowedTags: ["a"],
   });
 
   return createElement(tag, { ...rest }, sanitizedHTML);
