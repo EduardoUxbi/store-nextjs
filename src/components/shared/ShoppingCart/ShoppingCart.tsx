@@ -50,7 +50,7 @@ export default function ShoppingCart() {
             disabled={isBuying}
             onClick={handleBuy}
           >
-            Buy
+            Comprar
           </button>
         </div>
       )}

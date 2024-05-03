@@ -15,10 +15,10 @@ export const Header = async () => {
       <nav>
         <ul className={styles.Header__list}>
           <li>
-            <Link href="/">Home</Link>
+            <Link href="/">Inicio</Link>
           </li>
           <li>
-            <Link href="/store">Store</Link>
+            <Link href="/store">Tienda</Link>
           </li>
         </ul>
       </nav>
@@ -27,9 +27,9 @@ export const Header = async () => {
           <Link href="/my-account"><p>{customer.firstName} ({customer.email})</p></Link>
         ) : (
           <div className={styles.Header__links}>
-            <Link href="/signup">Sign Up</Link>
+            <Link href="/signup">Registrarse</Link>
             <p>-</p>
-            <Link href="/login">Login</Link>
+            <Link href="/login">Ingresar</Link>
           </div>
         )}
         <NoSSRShoppingCart />
